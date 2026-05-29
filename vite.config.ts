@@ -1,4 +1,4 @@
-import { cloudflare } from "@cloudflare/vite-plugin";
+// Removed cloudflare plugin import
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
@@ -9,9 +9,8 @@ export default defineConfig({
   plugins: [
     tsconfigPaths(),
     tailwindcss(),
-    cloudflare({ viteEnvironment: { name: "ssr" } }),
     tanstackStart({
-      server: { entry: "server" },
+      server: { preset: "vercel", entry: "server" },
     }),
     react(),
   ],
