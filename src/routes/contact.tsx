@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/ui/PageHero";
 import { SITE } from "@/lib/site";
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { CONTACT_IMAGE } from "@/lib/images";
@@ -26,8 +27,8 @@ function ContactPage() {
   return (
     <>
       <PageHero eyebrow="Get in Touch" title="Contact New Ridge School" description="Call, message, or visit New Ridge School at Khanapuram Haveli on Yellandu Road, Khammam." />
-      <section className="py-24 bg-background">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 grid lg:grid-cols-5 gap-10">
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-5 gap-10">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:col-span-2 space-y-5">
             {[
               { Icon: MapPin, label: "Visit", value: `${SITE.address.line1}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.postal}` },
@@ -58,7 +59,7 @@ function ContactPage() {
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-green-500 text-white px-6 py-3 font-semibold hover:bg-green-600 transition-colors"
             >
-              <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
+              <FaWhatsapp className="h-4 w-4" /> Chat on WhatsApp
             </a>
           </motion.div>
 
@@ -86,7 +87,7 @@ function ContactPage() {
           </motion.form>
         </div>
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 mt-12 grid lg:grid-cols-[0.92fr_1.08fr] gap-6 items-stretch">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 grid lg:grid-cols-[0.92fr_1.08fr] gap-6 items-stretch">
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-elegant">
             <img src={CONTACT_IMAGE.campus} alt="New Ridge School campus exterior" className="h-56 w-full object-cover sm:h-64" loading="lazy" decoding="async" />
             <div className="p-5 sm:p-6">

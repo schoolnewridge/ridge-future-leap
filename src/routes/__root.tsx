@@ -96,8 +96,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { type: "application/ld+json", children: JSON.stringify(orgLd) },
     ],
   }),
-  shellComponent: RootShell,
-  pendingComponent: LoadingScreen,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
@@ -123,13 +121,15 @@ function RootComponent() {
   const transparent = pathname === "/";
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Navbar transparentOnTop={transparent} />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-      <FloatingWhatsApp />
-    </QueryClientProvider>
+    <RootShell>
+      <QueryClientProvider client={queryClient}>
+        <Navbar transparentOnTop={transparent} />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+        <FloatingWhatsApp />
+      </QueryClientProvider>
+    </RootShell>
   );
 }

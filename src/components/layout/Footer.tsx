@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="relative bg-[linear-gradient(135deg,#1e3a8a_0%,#0f172a_100%)] text-white overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(250,204,21,0.18),transparent_42%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.18),transparent_38%)]" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3">

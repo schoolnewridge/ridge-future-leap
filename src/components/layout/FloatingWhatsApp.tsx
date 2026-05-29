@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { SITE } from "@/lib/site";
 
 export function FloatingWhatsApp() {
@@ -12,7 +12,7 @@ export function FloatingWhatsApp() {
     >
       <span className="absolute inset-0 rounded-full bg-green-500/40 animate-ping" />
       <span className="relative grid place-items-center h-14 w-14 rounded-full bg-green-500 text-white shadow-xl group-hover:scale-110 transition-transform">
-        <MessageCircle className="h-6 w-6" />
+        <FaWhatsapp className="h-6 w-6" />
       </span>
     </a>
   );

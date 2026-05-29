@@ -1,4 +1,5 @@
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 import { SITE } from "@/lib/site";
 
@@ -39,7 +40,7 @@ export function AdmissionsCTA() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-5 py-3 font-semibold text-primary shadow-sm"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
+              <FaWhatsapp className="h-4 w-4" /> WhatsApp
             </a>
           </div>
         </div>

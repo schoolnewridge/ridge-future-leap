@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowRight, Phone, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, Phone, Sparkles } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { HERO_SLIDES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 
@@ -69,7 +70,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-white px-7 py-3.5 font-semibold text-green-700 hover:bg-green-50 transition-colors"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
+              <FaWhatsapp className="h-4 w-4" /> WhatsApp
             </a>
           </motion.div>
 

@@ -6,7 +6,7 @@ export function PageHero({ eyebrow, title, description, children }: { eyebrow?: 
     <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 bg-white overflow-hidden border-b border-blue-100">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(29,78,216,0.08),transparent_38%),radial-gradient(circle_at_80%_70%,rgba(250,204,21,0.12),transparent_34%)]" />
       <div className="absolute inset-0 opacity-[0.45] school-grid" />
-      <div className="relative mx-auto max-w-5xl px-6 lg:px-8 text-center">
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
         {eyebrow && (
           <motion.span
             initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
