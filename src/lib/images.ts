@@ -147,7 +147,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     description: "Nursery, LKG, and UKG early learning moments.",
     items: [
       { src: prePrimary3, alt: "Pre-primary classroom environment", caption: "Early learning" },
-      { src: prePrimary1, alt: "Pre-primary students during an activity", caption: "Pre-primary activity" },
+      { src: prePrimary1, alt: "Pre-primary students during an activity", caption: "Pre-primary activity", focalPoint: "center top" },
       { src: prePrimary2, alt: "Young learners participating in class", caption: "Little learners" },
       { src: prePrimaryPlay, alt: "Pre-primary students enjoying outdoor play-based learning", caption: "Play-Based Learning" },
     ],
