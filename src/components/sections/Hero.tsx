@@ -30,11 +30,11 @@ export function Hero() {
               <Sparkles className="h-3.5 w-3.5 text-gold" />
               {SLIDES[i].eyebrow}
             </span>
-            <h1 className="mt-6 max-w-[12ch] font-display text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-slate-900 leading-[1.02]">
+            <h1 className="mt-6 max-w-[12ch] font-display text-responsive-h1 font-semibold tracking-tight text-slate-900 leading-[1.02]">
               {SLIDES[i].title}
             </h1>
             <div className="mt-6 h-1.5 w-36 rounded-full bg-gold-gradient" />
-            <p className="mt-6 max-w-2xl text-lg sm:text-xl text-slate-600 leading-relaxed lg:min-h-[3.5rem]">
+            <p className="mt-6 max-w-2xl text-responsive-p text-slate-600 leading-relaxed lg:min-h-[3.5rem]">
               {SLIDES[i].desc}
             </p>
           </div>
@@ -43,24 +43,24 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25 }}
-            className="mt-8 flex flex-wrap items-center gap-3 lg:mt-10"
+            className="mt-8 grid grid-cols-1 sm:flex sm:flex-row sm:flex-wrap items-center gap-3 lg:mt-10"
           >
             <a
               href={SLIDES[i].ctaLink}
-              className="group inline-flex items-center gap-2 rounded-full bg-gold text-gold-foreground px-7 py-3.5 font-semibold shadow-gold hover:scale-105 transition-transform"
+              className="group flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-gold text-gold-foreground px-7 py-3.5 font-semibold shadow-gold hover:scale-105 transition-transform"
             >
               {SLIDES[i].ctaText}
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <Link
               to="/programs"
-              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-semibold shadow-elegant hover:scale-105 transition-transform"
+              className="flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-semibold shadow-elegant hover:scale-105 transition-transform"
             >
               Explore Programs
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-7 py-3.5 font-semibold text-primary shadow-sm hover:bg-blue-50 transition-colors"
+              className="flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-blue-200 bg-white px-7 py-3.5 font-semibold text-primary shadow-sm hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-4 w-4" /> Contact Us
             </Link>
@@ -68,7 +68,7 @@ export function Hero() {
               href={`https://wa.me/${SITE.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-white px-7 py-3.5 font-semibold text-green-700 hover:bg-green-50 transition-colors"
+              className="flex min-h-[44px] w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-green-200 bg-white px-7 py-3.5 font-semibold text-green-700 hover:bg-green-50 transition-colors"
             >
               <FaWhatsapp className="h-4 w-4" /> WhatsApp
             </a>
