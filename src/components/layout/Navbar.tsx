@@ -4,12 +4,10 @@ import { Facebook, Mail, Menu, Phone, X, ArrowRight } from "lucide-react";
 import { NAV, SITE } from "@/lib/site";
 import { BRANDING_IMAGE } from "@/lib/images";
 import { motion, AnimatePresence } from "framer-motion";
-import { BrochureModal } from "@/components/ui/BrochureModal";
 
 export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [brochureOpen, setBrochureOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -116,12 +114,7 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
               const anchor = sectionAnchors[item.label];
               return (
                 <li key={item.to}>
-                  {item.label === "Brochure" ? (
-                    <button onClick={() => setBrochureOpen(true)} className={linkClass}>
-                      {navLabels[item.label] ?? item.label.toUpperCase()}
-                      <span className="absolute inset-x-3 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-gold shadow-[0_0_10px_rgba(250,204,21,0.65)] transition-transform duration-300 group-hover:scale-x-100" />
-                    </button>
-                  ) : anchor ? (
+                  {anchor ? (
                     <a href={anchor} className={linkClass}>
                       {navLabels[item.label] ?? item.label.toUpperCase()}
                       <span className="absolute inset-x-3 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-gold shadow-[0_0_10px_rgba(250,204,21,0.65)] transition-transform duration-300 group-hover:scale-x-100" />
@@ -162,12 +155,7 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
                   const anchor = sectionAnchors[item.label];
                   return (
                     <li key={item.to}>
-                      {item.label === "Brochure" ? (
-                        <button onClick={() => { setOpen(false); setBrochureOpen(true); }} className={mobileItemClass + " w-full"}>
-                          <span>{navLabels[item.label] ?? item.label.toUpperCase()}</span>
-                          <span className="h-2 w-2 rounded-full bg-yellow-300/0 transition-all group-hover:bg-yellow-300" />
-                        </button>
-                      ) : anchor ? (
+                      {anchor ? (
                         <a href={anchor} onClick={() => setOpen(false)} className={mobileItemClass}>
                           <span>{navLabels[item.label] ?? item.label.toUpperCase()}</span>
                           <span className="h-2 w-2 rounded-full bg-yellow-300/0 transition-all group-hover:bg-yellow-300" />
@@ -207,7 +195,6 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
           </motion.div>
         )}
       </AnimatePresence>
-      <BrochureModal isOpen={brochureOpen} onClose={() => setBrochureOpen(false)} />
     </header>
   );
 }
