@@ -68,9 +68,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/70">
-          <div>© {new Date().getFullYear()} New Ridge School, Khammam. All rights reserved.</div>
-          <div>Manasa Educational Society · CBSE & State Integrated · Nursery – X</div>
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 text-xs text-white/70">
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+            <div>© {new Date().getFullYear()} New Ridge School, Khammam. All rights reserved.</div>
+            <div className="text-[11px] text-[#BFC5D2]/70 mt-3 sm:mt-2 leading-relaxed">
+              Website by <span className="transition-colors duration-200 hover:text-gold cursor-default">Uniscale Digital</span>
+              <br />
+              <a href="mailto:uniscaledigital@gmail.com" className="transition-colors duration-200 hover:text-white">
+                uniscaledigital@gmail.com
+              </a>
+            </div>
+          </div>
+          <div className="text-center sm:text-right mt-2 sm:mt-0">Manasa Educational Society · CBSE & State Integrated · Nursery – X</div>
         </div>
       </div>
     </footer>
