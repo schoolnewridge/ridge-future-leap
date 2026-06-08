@@ -3,6 +3,7 @@ import campusBuilding from "../../Buiding_newRidge.jpeg";
 import stemRoboticsHero from "../../nr_robo.png";
 import classroomActivity1 from "../../PHOTO-2026-04-16-08-06-31.jpg";
 import campusActivity2 from "../../PHOTO-2026-04-16-08-08-38.jpg";
+import campusEnvironment from "../../nr_2.png";
 import classroomNewRidge from "../assets/classroom.jpeg";
 
 import academicActivity from "../../WhatsApp Image 2026-05-27 at 17.06.53.jpeg";
@@ -96,6 +97,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     items: [
       { src: campusBuilding, alt: "New Ridge School campus exterior", caption: "Campus exterior" },
       { src: campusActivity2, alt: "A student doing science work in a classroom setting", caption: "Campus learning" },
+      { src: campusEnvironment, alt: "New Ridge School campus environment and facilities", caption: "Campus Environment" },
     ],
   },
   {
