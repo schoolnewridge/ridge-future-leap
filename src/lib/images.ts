@@ -11,7 +11,8 @@ import culturalDance1 from "../../WhatsApp Image 2026-05-27 at 17.10.05.jpeg";
 import festival1 from "../../WhatsApp Image 2026-05-27 at 17.11.41.jpeg";
 import achievementsGroup from "../../WhatsApp Image 2026-05-27 at 17.15.52.jpeg";
 import festival2 from "../../WhatsApp Image 2026-05-27 at 18.21.29.jpeg";
-import karateImage from "../../WhatsApp Image 2026-05-27 at 18.23.46.jpeg";
+import karate1 from "../../WhatsApp Image 2026-05-27 at 18.23.46.jpeg";
+import karate2 from "../../WhatsApp Image 2026-05-27 at 18.25.30.jpeg";
 import prePrimary1 from "../../WhatsApp Image 2026-05-27 at 18.30.12.jpeg";
 import prePrimary2 from "../../WhatsApp Image 2026-05-27 at 18.31.53.jpeg";
 import prePrimaryPlay from "../../PHOTO-2026-04-16-10-47-56.jpg";
@@ -133,10 +134,10 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   },
   {
     name: "Karate",
-    description: "Martial arts training and discipline-building activities.",
+    description: "Building discipline, confidence, focus, and physical fitness through structured karate training.",
     items: [
-      { src: karateImage, alt: "Karate training at New Ridge School", caption: "Karate Training" },
-      { src: karateImage, alt: "Students demonstrating martial arts excellence", caption: "Martial Arts Excellence" },
+      { src: karate1, alt: "Karate training at New Ridge School", caption: "Karate Training" },
+      { src: karate2, alt: "Students demonstrating martial arts excellence", caption: "Karate Demonstration" },
     ],
   },
   {
