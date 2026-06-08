@@ -137,7 +137,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     description: "Building discipline, confidence, focus, and physical fitness through structured karate training.",
     items: [
       { src: karate1, alt: "Karate training at New Ridge School", caption: "Karate Training" },
-      { src: karate2, alt: "Students demonstrating martial arts excellence", caption: "Karate Demonstration" },
+      { src: karate2, alt: "Students demonstrating martial arts excellence", caption: "Karate Demonstration", focalPoint: "center top" },
     ],
   },
   {
