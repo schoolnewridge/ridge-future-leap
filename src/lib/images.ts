@@ -23,6 +23,11 @@ import festival3 from "../../WhatsApp Image 2026-05-27 at 18.34.18.jpeg";
 import culturalDance2 from "../../nr_4.png";
 import culturalDance3 from "../../WhatsApp Image 2026-05-27 at 18.38.42.jpeg";
 
+import annualEnhanced1 from "../../enhancedd_an-1.png";
+import annualEnhanced2 from "../../enhance-an-2.png";
+import annualEnhanced3 from "../../enhanced-an-3.png";
+import annualEnhanced4 from "../../enhanced-an-4.png";
+
 export const BRANDING_IMAGE = logoNewRidge;
 export const META_IMAGE = campusBuilding;
 
@@ -154,13 +159,12 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   },
   {
     name: "Annual Day",
-    description: "Stage showcases and school celebration highlights.",
+    description: "Celebrating talent, creativity, culture, and student achievements through memorable Annual Day performances.",
     items: [
-      { src: festival2, alt: "Annual day celebration at New Ridge School", caption: "Annual day", focalPoint: "center 5%" },
-      { src: prePrimary1, alt: "Pre-primary annual day participation", caption: "Performance moment", focalPoint: "center 20%" },
-      { src: prePrimary2, alt: "Students on stage for annual celebrations", caption: "Stage moment", focalPoint: "center 18%" },
-      { src: culturalDance2, alt: "Annual day cultural performance", caption: "Showcase", focalPoint: "center 20%" },
-      { src: culturalDance3, alt: "Annual celebration at New Ridge School", caption: "Celebration", focalPoint: "center 20%" },
+      { src: annualEnhanced1, alt: "Pre-primary students participating in Annual Day cultural activities.", caption: "Annual Day Celebrations" },
+      { src: annualEnhanced2, alt: "Students showcasing talent and confidence through stage performances.", caption: "Colorful Dance Performance" },
+      { src: annualEnhanced3, alt: "A vibrant group performance highlighting teamwork and creativity.", caption: "Creative Stage Presentation" },
+      { src: annualEnhanced4, alt: "Students presenting a discipline and leadership themed cultural act.", caption: "Patriotic Performance", focalPoint: "center top" },
     ],
   },
 ];
