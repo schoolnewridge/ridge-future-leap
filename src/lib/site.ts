@@ -15,7 +15,7 @@ export const SITE = {
     country: "India",
     postal: "507002",
   },
-  phones: ["7729969763", "7729969764", "7075430445"],
+  phones: ["7729969763", "7729969764", "7075430454"],
   whatsapp: "917729969763",
   email: "newridgeschool@gmail.com",
   socials: {
