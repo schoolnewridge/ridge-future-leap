@@ -313,7 +313,7 @@ export function AdmissionsForm() {
                     control={control}
                     name="classApplyingFor"
                     render={({ field }) => (
-                      <SelectField label="Class Applying For *" placeholder="Select class" error={errors.classApplyingFor?.message} value={field.value ?? ""} onValueChange={field.onChange}>
+                      <SelectField label="Admission Into Class *" placeholder="Select class" error={errors.classApplyingFor?.message} value={field.value ?? ""} onValueChange={field.onChange}>
                         {classOptions.map((option) => (
                           <SelectItem key={option} value={option}>{option}</SelectItem>
                         ))}
