@@ -3,9 +3,8 @@ import campusBuilding from "../../Buiding_newRidge.jpeg";
 import stemRoboticsHero from "../../nr_robo.png";
 import campusActivity1 from "../../PHOTO-2026-04-16-10-25-12.jpg";
 import campusActivity2 from "../../PHOTO-2026-04-16-08-08-38.jpg";
-import classroomNewRidge from "../../ChatGPT Image May 30, 2026, 12_39_23 AM.png";
-import directorPortrait from "../../director_newridge.jpeg";
-import principalPortrait from "../../WhatsApp Image 2026-05-25 at 18.17.07.jpeg";
+import classroomNewRidge from "../assets/classroom.jpeg";
+
 import academicActivity from "../../WhatsApp Image 2026-05-27 at 17.06.53.jpeg";
 import culturalDance1 from "../../WhatsApp Image 2026-05-27 at 17.10.05.jpeg";
 import festival1 from "../../WhatsApp Image 2026-05-27 at 17.11.41.jpeg";
@@ -66,10 +65,7 @@ export const ABOUT_IMAGES = {
   community: achievementsGroup,
 } as const;
 
-export const LEADERSHIP_IMAGES = {
-  director: directorPortrait,
-  principal: principalPortrait,
-} as const;
+
 
 export const CONTACT_IMAGE = {
   campus: campusBuilding,
@@ -100,7 +96,6 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     description: "School buildings and the learning environment.",
     items: [
       { src: campusBuilding, alt: "New Ridge School campus exterior", caption: "Campus exterior" },
-      { src: campusActivity1, alt: "Students in a classroom lesson at New Ridge School", caption: "Campus classrooms" },
       { src: campusActivity2, alt: "A student doing science work in a classroom setting", caption: "Campus learning" },
     ],
   },
@@ -108,28 +103,13 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     name: "Classrooms",
     description: "Learning spaces where daily instruction happens.",
     items: [
-      { src: classroomNewRidge, alt: "Classroom at New Ridge School", caption: "Classroom learning" },
+      { src: classroomNewRidge, alt: "Classroom at New Ridge School", caption: "Classroom Learning", focalPoint: "center center" },
       { src: academicActivity, alt: "Students engaged in a classroom activity", caption: "Academic engagement" },
       { src: campusActivity1, alt: "Students and staff gathered in a classroom or indoor activity space", caption: "Classroom celebration" },
     ],
   },
-  {
-    name: "Leadership",
-    description: "Leadership portraits from the school community.",
-    items: [
-      { src: directorPortrait, alt: "Director of New Ridge School", caption: "Director" },
-      { src: principalPortrait, alt: "Principal of New Ridge School", caption: "Principal" },
-    ],
-  },
-  {
-    name: "Academics",
-    description: "Classroom learning and academic participation.",
-    items: [
-      { src: classroomNewRidge, alt: "New Ridge classroom learning", caption: "Classroom focus" },
-      { src: academicActivity, alt: "Students taking part in an academic activity", caption: "Student engagement" },
-      { src: campusActivity2, alt: "A student using a microscope in class", caption: "Science learning" },
-    ],
-  },
+
+
   {
     name: "Festivals",
     description: "Traditional celebrations and cultural observances.",
