@@ -30,7 +30,7 @@ export const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/programs", label: "Programs" },
-  { to: "/facilities", label: "Facilities" },
+  { to: "?brochure=true", label: "Brochure" },
   { to: "/stem-robotics", label: "STEM & Robotics" },
   { to: "/gallery", label: "Gallery" },
   { to: "/admissions", label: "Admissions" },
