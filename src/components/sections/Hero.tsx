@@ -92,7 +92,7 @@ export function Hero() {
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
                     <div className="text-[10px] uppercase tracking-[0.28em] text-primary font-semibold">New Ridge School</div>
-                    <div className="mt-1 font-display text-2xl font-semibold text-slate-900">{SLIDES[i].title}</div>
+                    <div className="mt-1 font-display text-2xl font-semibold text-slate-900">{SLIDES[i].cardTitle}</div>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-primary border border-blue-100">
                     {SLIDES[i].eyebrow}
