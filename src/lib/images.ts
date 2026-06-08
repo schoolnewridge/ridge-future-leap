@@ -18,7 +18,7 @@ import prePrimary2 from "../../WhatsApp Image 2026-05-27 at 18.31.53.jpeg";
 import prePrimary3 from "../../WhatsApp Image 2026-05-28 at 16.26.10.jpeg";
 import culturalCelebration from "../../WhatsApp Image 2026-05-27 at 17.15.52.jpeg";
 import festival3 from "../../WhatsApp Image 2026-05-27 at 18.34.18.jpeg";
-import culturalDance2 from "../../WhatsApp Image 2026-05-27 at 18.35.41.jpeg";
+import culturalDance2 from "../../nr_4.png";
 import culturalDance3 from "../../WhatsApp Image 2026-05-27 at 18.38.42.jpeg";
 
 export const BRANDING_IMAGE = logoNewRidge;
@@ -126,7 +126,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     items: [
       { src: culturalCelebration, alt: "Students and teachers taking part in a cultural celebration", caption: "Cultural celebration", focalPoint: "center 16%" },
       { src: culturalDance1, alt: "Students performing in a cultural activity", caption: "Cultural program", focalPoint: "center 18%" },
-      { src: culturalDance2, alt: "Students on stage during a cultural event", caption: "Stage performance" },
+      { src: culturalDance2, alt: "Students on stage during a cultural event", caption: "School Event" },
       { src: culturalDance3, alt: "Cultural performance at New Ridge School", caption: "Cultural showcase" },
     ],
   },
