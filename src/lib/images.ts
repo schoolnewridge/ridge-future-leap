@@ -5,6 +5,7 @@ import classroomActivity1 from "../../PHOTO-2026-04-16-08-06-31.jpg";
 import campusActivity2 from "../../PHOTO-2026-04-16-08-08-38.jpg";
 import campusEnvironment from "../../nr_2.png";
 import classroomNewRidge from "../assets/classroom.jpeg";
+import scienceLab from "../../PHOTO-2026-04-16-08-27-36.jpg";
 
 import academicActivity from "../../WhatsApp Image 2026-05-27 at 17.06.53.jpeg";
 import culturalDance1 from "../../WhatsApp Image 2026-05-27 at 17.10.05.jpeg";
@@ -109,6 +110,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
       { src: classroomNewRidge, alt: "Classroom at New Ridge School", caption: "Classroom Learning", focalPoint: "center center" },
       { src: academicActivity, alt: "Students engaged in a classroom activity", caption: "Academic engagement" },
       { src: classroomActivity1, alt: "Students engaged in interactive learning", caption: "Interactive Learning" },
+      { src: scienceLab, alt: "Students performing science experiments in a laboratory environment", caption: "Science Laboratory" },
     ],
   },
 
