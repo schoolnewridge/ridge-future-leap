@@ -27,6 +27,7 @@ import annualEnhanced1 from "../../enhancedd_an-1.png";
 import annualEnhanced2 from "../../enhance-an-2.png";
 import annualEnhanced3 from "../../enhanced-an-3.png";
 import annualEnhanced4 from "../../enhanced-an-4.png";
+import greenCampus from "../../enhanced-ground-2.png";
 
 export const BRANDING_IMAGE = logoNewRidge;
 export const META_IMAGE = campusBuilding;
@@ -101,11 +102,12 @@ export type GalleryCategory = {
 export const GALLERY_CATEGORIES: GalleryCategory[] = [
   {
     name: "Campus",
-    description: "School buildings and the learning environment.",
+    description: "School buildings, digital learning spaces, and a vibrant campus environment that supports holistic student development.",
     items: [
-      { src: campusBuilding, alt: "New Ridge School campus exterior", caption: "Campus exterior" },
-      { src: campusActivity2, alt: "A student doing science work in a classroom setting", caption: "Campus learning" },
+      { src: campusBuilding, alt: "New Ridge School campus exterior", caption: "Campus Exterior" },
+      { src: campusActivity2, alt: "A student doing science work in a classroom setting", caption: "Digital Classrooms" },
       { src: campusEnvironment, alt: "New Ridge School campus environment and facilities", caption: "Campus Environment" },
+      { src: greenCampus, alt: "Students participating in environmental awareness and sustainability activities through creative outdoor formations.", caption: "Green Campus Initiative", focalPoint: "center center" },
     ],
   },
   {
