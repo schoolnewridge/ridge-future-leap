@@ -15,6 +15,7 @@ import { Route as HomeRouteImport } from './routes/home'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FacilitiesRouteImport } from './routes/facilities'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BrochureRouteImport } from './routes/brochure'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -49,6 +50,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BrochureRoute = BrochureRouteImport.update({
+  id: '/brochure',
+  path: '/brochure',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdmissionsRoute = AdmissionsRouteImport.update({
   id: '/admissions',
   path: '/admissions',
@@ -69,6 +75,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admissions': typeof AdmissionsRoute
+  '/brochure': typeof BrochureRoute
   '/contact': typeof ContactRoute
   '/facilities': typeof FacilitiesRoute
   '/gallery': typeof GalleryRoute
@@ -80,6 +87,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admissions': typeof AdmissionsRoute
+  '/brochure': typeof BrochureRoute
   '/contact': typeof ContactRoute
   '/facilities': typeof FacilitiesRoute
   '/gallery': typeof GalleryRoute
@@ -92,6 +100,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admissions': typeof AdmissionsRoute
+  '/brochure': typeof BrochureRoute
   '/contact': typeof ContactRoute
   '/facilities': typeof FacilitiesRoute
   '/gallery': typeof GalleryRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admissions'
+    | '/brochure'
     | '/contact'
     | '/facilities'
     | '/gallery'
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admissions'
+    | '/brochure'
     | '/contact'
     | '/facilities'
     | '/gallery'
@@ -127,6 +138,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/admissions'
+    | '/brochure'
     | '/contact'
     | '/facilities'
     | '/gallery'
@@ -139,6 +151,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AdmissionsRoute: typeof AdmissionsRoute
+  BrochureRoute: typeof BrochureRoute
   ContactRoute: typeof ContactRoute
   FacilitiesRoute: typeof FacilitiesRoute
   GalleryRoute: typeof GalleryRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/brochure': {
+      id: '/brochure'
+      path: '/brochure'
+      fullPath: '/brochure'
+      preLoaderRoute: typeof BrochureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admissions': {
       id: '/admissions'
       path: '/admissions'
@@ -219,6 +239,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AdmissionsRoute: AdmissionsRoute,
+  BrochureRoute: BrochureRoute,
   ContactRoute: ContactRoute,
   FacilitiesRoute: FacilitiesRoute,
   GalleryRoute: GalleryRoute,
