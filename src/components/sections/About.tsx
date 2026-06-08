@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { BookOpen, ShieldCheck, Users, Award, ArrowRight } from "lucide-react";
 import { SITE } from "@/lib/site";
-import { ABOUT_IMAGES } from "@/lib/images";
+import { LEADERSHIP_IMAGES } from "@/lib/images";
 
 const FEATURES = [
   {
@@ -48,29 +48,22 @@ export function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[45%_1fr] gap-12 lg:gap-20 items-center">
           
-          {/* Left: Clean 2-Card Layout */}
+          {/* Left: Single Premium Image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex flex-col gap-6"
+            className="relative"
           >
-            {/* Primary Card: Building */}
-            <div className="relative aspect-[16/10] sm:aspect-[2/1] lg:aspect-[16/11] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md border border-slate-200 group transition-shadow duration-300">
-              <img src={ABOUT_IMAGES.campus} alt="New Ridge School campus exterior" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent pointer-events-none" />
-              
-              <div className="absolute bottom-5 left-5">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-4 py-2 text-xs sm:text-sm font-semibold text-primary shadow-sm">
-                  Nursery to Class X
-                </span>
-              </div>
-            </div>
+            {/* Subtle background accent */}
+            <div className="absolute -inset-4 sm:-inset-6 rounded-[2.5rem] bg-blue-50/60 -z-10" />
+            <div className="absolute -inset-4 sm:-inset-6 translate-x-4 translate-y-4 rounded-[2.5rem] border border-blue-100/50 -z-10" />
 
-            {/* Secondary Card: Classroom */}
-            <div className="relative aspect-[16/10] sm:aspect-[2/1] lg:aspect-[16/11] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md border border-slate-200 group transition-shadow duration-300">
-              <img src={ABOUT_IMAGES.classroom} alt="Classroom at New Ridge School" className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+            {/* Primary Image Card */}
+            <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-elegant border border-slate-100 group transition-shadow duration-300 hover:shadow-2xl bg-slate-50">
+              <img src={LEADERSHIP_IMAGES.principal} alt="New Ridge School" className="h-full w-full object-contain sm:object-cover sm:object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent pointer-events-none" />
             </div>
           </motion.div>
 
