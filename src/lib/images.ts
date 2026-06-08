@@ -1,7 +1,7 @@
 import logoNewRidge from "../../Logo_newridge.jpeg";
 import campusBuilding from "../../Buiding_newRidge.jpeg";
 import stemRoboticsHero from "../../nr_robo.png";
-import campusActivity1 from "../../PHOTO-2026-04-16-10-25-12.jpg";
+import classroomActivity1 from "../../PHOTO-2026-04-16-08-06-31.jpg";
 import campusActivity2 from "../../PHOTO-2026-04-16-08-08-38.jpg";
 import classroomNewRidge from "../assets/classroom.jpeg";
 
@@ -106,7 +106,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     items: [
       { src: classroomNewRidge, alt: "Classroom at New Ridge School", caption: "Classroom Learning", focalPoint: "center center" },
       { src: academicActivity, alt: "Students engaged in a classroom activity", caption: "Academic engagement" },
-      { src: campusActivity1, alt: "Students and staff gathered in a classroom or indoor activity space", caption: "Classroom celebration" },
+      { src: classroomActivity1, alt: "Students engaged in interactive learning", caption: "Interactive Learning" },
     ],
   },
 
