@@ -26,7 +26,7 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent" />
               </div>
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
-                <img src={ABOUT_IMAGES.community} alt="New Ridge School students gathered together" className="h-full w-full object-cover" loading="lazy" decoding="async" />
+                <img src={ABOUT_IMAGES.community} alt="New Ridge School students gathered together" className="h-full w-full object-contain bg-slate-50" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gold/20 via-transparent to-transparent" />
               </div>
             </div>
