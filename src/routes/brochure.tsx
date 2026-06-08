@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/ui/PageHero";
-import { Download, ExternalLink } from "lucide-react";
+import { Download } from "lucide-react";
 import brochureFront from "../../brochure_front.png";
 import brochureBack from "../../brochure_back.png";
 
@@ -61,15 +61,6 @@ function BrochurePage() {
                 <Download className="h-4 w-4" />
                 Download Brochure
               </button>
-              <a
-                href={brochureFront}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-slate-100 px-8 text-sm font-semibold text-slate-700 transition-all hover:bg-slate-200"
-              >
-                <ExternalLink className="h-4 w-4" />
-                View Full Size
-              </a>
             </div>
           </div>
 
