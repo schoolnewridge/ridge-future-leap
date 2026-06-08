@@ -18,10 +18,29 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import {
-  type AdmissionSubmission,
-  saveAdmissionSubmission,
-} from "@/lib/admissions-form";
+export type AdmissionSubmission = {
+  id: string;
+  submittedAt: string;
+  studentFullName: string;
+  dateOfBirth: string;
+  gender: "Male" | "Female";
+  nationality: string;
+  religion: string;
+  casteSubcaste: string;
+  aadhaarNumber: string;
+  classApplyingFor: string;
+  previousSchoolStudied: string;
+  fatherName: string;
+  fatherOccupation: string;
+  motherName: string;
+  motherOccupation: string;
+  mobileNumber: string;
+  parentEmailId: string;
+  doorNoStreet: string;
+  villageMandal: string;
+  cityTown: string;
+  district: string;
+};
 
 const admissionSchema = z.object({
   studentFullName: z.string().trim().min(2, "Student full name is required"),
@@ -162,16 +181,32 @@ export function AdmissionsForm() {
 
   const occupationPlaceholder = useMemo(() => "Enter occupation", []);
 
-  const onSubmit = (values: AdmissionFormValues) => {
-    const record: AdmissionSubmission = {
-      id: `ADR-${Date.now().toString(36).toUpperCase()}`,
-      submittedAt: new Date().toISOString(),
-      ...values,
-    };
+  const onSubmit = async (values: AdmissionFormValues) => {
+    try {
+      const record: AdmissionSubmission = {
+        id: `ADR-${Date.now().toString(36).toUpperCase()}`,
+        submittedAt: new Date().toISOString(),
+        ...values,
+      };
 
-    saveAdmissionSubmission(record);
-    setSuccessRecord(record);
-    reset(defaultValues);
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzC3bSGlKjD8YBTnFd2I7cwrTF_Cqo-M5a3vbVL1bMubVeyrq3xjSW4hD8AYjEkqRHw4Q/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(record),
+        }
+      );
+
+      setSuccessRecord(record);
+      reset(defaultValues);
+    } catch (error) {
+      console.error("Error submitting form", error);
+      alert("There was an error submitting the form. Please try again or contact the school directly.");
+    }
   };
 
   if (successRecord) {
