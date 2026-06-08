@@ -29,14 +29,16 @@ export const HERO_SLIDES = [
     alt: "New Ridge School campus exterior",
     eyebrow: "New Ridge School",
     title: "CBSE & State Integrated Curriculum",
+    cardTitle: "CBSE & State Integrated Curriculum",
     desc: "Nursery to Class X learning with a strong academic base.",
   },
   {
-    src: classroomNewRidge,
-    alt: "A student reading in class at New Ridge School",
-    eyebrow: "Learning Programs",
-    title: "Reading in Class",
-    desc: "A student reading during class time.",
+    src: prePrimary3,
+    alt: "New Ridge School students engaged in interactive classroom learning",
+    eyebrow: "Academic Excellence",
+    title: "Empowering Young Minds for a Bright Future",
+    cardTitle: "Interactive Classroom Learning",
+    desc: "At New Ridge School Khammam, students learn through innovative teaching methods, interactive classrooms, and a nurturing environment that inspires curiosity, creativity, and academic excellence.",
   },
 ] as const;
 
