@@ -1,5 +1,6 @@
 import logoNewRidge from "../../Logo_newridge.jpeg";
 import campusBuilding from "../../Buiding_newRidge.jpeg";
+import stemRoboticsHero from "../../nr_robo.png";
 import campusActivity1 from "../../PHOTO-2026-04-16-10-25-12.jpg";
 import campusActivity2 from "../../PHOTO-2026-04-16-08-08-38.jpg";
 import classroomNewRidge from "../../ChatGPT Image May 30, 2026, 12_39_23 AM.png";
@@ -30,7 +31,10 @@ export const HERO_SLIDES = [
     eyebrow: "New Ridge School",
     title: "CBSE & State Integrated Curriculum",
     cardTitle: "CBSE & State Integrated Curriculum",
+    cardTag: "New Ridge School",
     desc: "Nursery to Class X learning with a strong academic base.",
+    ctaText: "Apply for Admission",
+    ctaLink: "/#admissions",
   },
   {
     src: prePrimary3,
@@ -38,7 +42,21 @@ export const HERO_SLIDES = [
     eyebrow: "Academic Excellence",
     title: "Empowering Young Minds for a Bright Future",
     cardTitle: "Interactive Classroom Learning",
+    cardTag: "Academic Excellence",
     desc: "At New Ridge School Khammam, students learn through innovative teaching methods, interactive classrooms, and a nurturing environment that inspires curiosity, creativity, and academic excellence.",
+    ctaText: "Apply for Admission",
+    ctaLink: "/#admissions",
+  },
+  {
+    src: stemRoboticsHero,
+    alt: "STEM and Robotics Education at New Ridge School",
+    eyebrow: "Future-Ready Learning",
+    title: "STEM & Robotics Education",
+    cardTitle: "STEM & Robotics Education",
+    cardTag: "Innovation Lab",
+    desc: "Building innovators, problem solvers, and future technology leaders through hands-on robotics, coding, artificial intelligence, STEM experiments, and innovation-based learning.",
+    ctaText: "Explore STEM Programs",
+    ctaLink: "/stem-robotics",
   },
 ] as const;
 
