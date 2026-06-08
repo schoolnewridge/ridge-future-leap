@@ -14,6 +14,7 @@ import festival2 from "../../WhatsApp Image 2026-05-27 at 18.21.29.jpeg";
 import karateImage from "../../WhatsApp Image 2026-05-27 at 18.23.46.jpeg";
 import prePrimary1 from "../../WhatsApp Image 2026-05-27 at 18.30.12.jpeg";
 import prePrimary2 from "../../WhatsApp Image 2026-05-27 at 18.31.53.jpeg";
+import prePrimaryPlay from "../../PHOTO-2026-04-16-10-47-56.jpg";
 import prePrimary3 from "../../WhatsApp Image 2026-05-28 at 16.26.10.jpeg";
 import culturalCelebration from "../../WhatsApp Image 2026-05-27 at 17.15.52.jpeg";
 import festival3 from "../../WhatsApp Image 2026-05-27 at 18.34.18.jpeg";
@@ -145,6 +146,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
       { src: prePrimary3, alt: "Pre-primary classroom environment", caption: "Early learning" },
       { src: prePrimary1, alt: "Pre-primary students during an activity", caption: "Pre-primary activity" },
       { src: prePrimary2, alt: "Young learners participating in class", caption: "Little learners" },
+      { src: prePrimaryPlay, alt: "Pre-primary students enjoying outdoor play-based learning", caption: "Play-Based Learning" },
     ],
   },
   {
