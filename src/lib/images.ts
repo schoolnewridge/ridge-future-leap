@@ -119,7 +119,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     name: "Festivals",
     description: "Traditional celebrations and cultural observances.",
     items: [
-      { src: festival1, alt: "Festive celebration at New Ridge School", caption: "Traditional celebration" },
+      { src: festival1, alt: "Students commemorating Ramanujan Day at New Ridge School", caption: "Ramanujan Day Celebration" },
       { src: festival2, alt: "Students participating in a festival program", caption: "Festival activity", focalPoint: "center 5%" },
       { src: festival3, alt: "Students taking part in a cultural festival celebration", caption: "Festival moment" },
     ],
