@@ -46,10 +46,10 @@ export function Hero() {
             className="mt-8 flex flex-wrap items-center gap-3 lg:mt-10"
           >
             <a
-              href="/#admissions"
+              href={SLIDES[i].ctaLink}
               className="group inline-flex items-center gap-2 rounded-full bg-gold text-gold-foreground px-7 py-3.5 font-semibold shadow-gold hover:scale-105 transition-transform"
             >
-              Apply for Admission
+              {SLIDES[i].ctaText}
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <Link
@@ -84,7 +84,11 @@ export function Hero() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.98, y: -10 }}
               transition={{ duration: 0.6 }}
-              className="relative overflow-hidden rounded-[2rem] bg-white p-3 sm:p-4 shadow-elegant border border-slate-200 aspect-square sm:aspect-[4/3] lg:aspect-auto lg:h-[600px] xl:h-[650px]"
+              className={`relative overflow-hidden rounded-[2rem] bg-white p-3 sm:p-4 shadow-elegant border aspect-square sm:aspect-[4/3] lg:aspect-auto lg:h-[600px] xl:h-[650px] transition-all duration-700 ${
+                i === 2 
+                  ? "border-blue-300/80 shadow-[0_0_50px_-12px_rgba(29,78,216,0.45)]" 
+                  : "border-slate-200"
+              }`}
             >
               <img src={SLIDES[i].src} alt={SLIDES[i].alt} className="h-full w-full object-cover rounded-[1.4rem]" loading={i === 0 ? "eager" : "lazy"} decoding="async" />
               <div className="absolute inset-4 rounded-[1.4rem] bg-gradient-to-t from-slate-950/65 via-slate-950/18 to-transparent pointer-events-none" />
@@ -95,7 +99,7 @@ export function Hero() {
                     <div className="mt-1 font-display text-2xl font-semibold text-slate-900">{SLIDES[i].cardTitle}</div>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-primary border border-blue-100">
-                    {SLIDES[i].eyebrow}
+                    {SLIDES[i].cardTag}
                   </div>
                 </div>
               </div>
