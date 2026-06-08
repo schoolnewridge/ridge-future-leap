@@ -115,7 +115,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     description: "Traditional celebrations and cultural observances.",
     items: [
       { src: festival1, alt: "Festive celebration at New Ridge School", caption: "Traditional celebration" },
-      { src: festival2, alt: "Students participating in a festival program", caption: "Festival activity", focalPoint: "center 18%" },
+      { src: festival2, alt: "Students participating in a festival program", caption: "Festival activity", focalPoint: "center 5%" },
       { src: festival3, alt: "Students taking part in a cultural festival celebration", caption: "Festival moment" },
     ],
   },
@@ -150,7 +150,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     name: "Annual Day",
     description: "Stage showcases and school celebration highlights.",
     items: [
-      { src: festival2, alt: "Annual day celebration at New Ridge School", caption: "Annual day", focalPoint: "center 18%" },
+      { src: festival2, alt: "Annual day celebration at New Ridge School", caption: "Annual day", focalPoint: "center 5%" },
       { src: prePrimary1, alt: "Pre-primary annual day participation", caption: "Performance moment", focalPoint: "center 20%" },
       { src: prePrimary2, alt: "Students on stage for annual celebrations", caption: "Stage moment", focalPoint: "center 18%" },
       { src: culturalDance2, alt: "Annual day cultural performance", caption: "Showcase", focalPoint: "center 20%" },
