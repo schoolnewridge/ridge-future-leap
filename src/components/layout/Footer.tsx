@@ -68,18 +68,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 text-xs text-white/70">
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <div>© {new Date().getFullYear()} New Ridge School, Khammam. All rights reserved.</div>
-            <div className="text-[11px] text-[#BFC5D2]/70 mt-3 sm:mt-2 leading-relaxed">
-              Website by <span className="transition-colors duration-200 hover:text-gold cursor-default">Uniscale Digital</span>
-              <br />
-              <a href="mailto:uniscaledigital@gmail.com" className="transition-colors duration-200 hover:text-white">
-                uniscaledigital@gmail.com
-              </a>
-            </div>
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/70">
+          <div className="text-center sm:text-left">© {new Date().getFullYear()} New Ridge School, Khammam. All rights reserved.</div>
+          <div className="text-center sm:text-right">Manasa Educational Society · CBSE & State Integrated · Nursery – X</div>
+        </div>
+
+        {/* Agency Branding */}
+        <div className="mt-6 pt-6 border-t border-white/10 flex flex-col items-center justify-center text-center">
+          <div className="text-[14px] md:text-[15px] text-[#BFC5D2]/90 leading-relaxed">
+            Website Designed & Developed by <span className="font-semibold transition-colors duration-300 hover:text-gold cursor-default">Uniscale Digital</span>
+            <br />
+            <a href="mailto:uniscaledigital@gmail.com" className="text-[13px] md:text-[14px] text-[#BFC5D2]/70 transition-colors duration-300 hover:text-white inline-block">
+              uniscaledigital@gmail.com
+            </a>
           </div>
-          <div className="text-center sm:text-right mt-2 sm:mt-0">Manasa Educational Society · CBSE & State Integrated · Nursery – X</div>
         </div>
       </div>
     </footer>
