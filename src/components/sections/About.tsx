@@ -44,43 +44,34 @@ const itemVariants = {
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-24 py-20 lg:py-32 bg-background overflow-hidden">
+    <section id="about" className="scroll-mt-24 py-20 lg:py-28 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-[45%_1fr] gap-12 lg:gap-20 items-center">
           
-          {/* Left: Premium Image Collage */}
+          {/* Left: Clean 2-Card Layout */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative lg:w-[110%] xl:w-[120%] mt-8 lg:mt-0"
+            className="flex flex-col gap-6"
           >
-            <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100">
-              <img src={ABOUT_IMAGES.campus} alt="New Ridge School campus exterior" className="h-full w-full object-cover" loading="lazy" decoding="async" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none" />
+            {/* Primary Card: Building */}
+            <div className="relative aspect-[16/10] sm:aspect-[2/1] lg:aspect-[16/11] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md border border-slate-200 group transition-shadow duration-300">
+              <img src={ABOUT_IMAGES.campus} alt="New Ridge School campus exterior" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent pointer-events-none" />
+              
+              <div className="absolute bottom-5 left-5">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-md px-4 py-2 text-xs sm:text-sm font-semibold text-primary shadow-sm">
+                  Nursery to Class X
+                </span>
+              </div>
             </div>
 
-            {/* Overlapping Cards */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="absolute -bottom-8 -right-4 sm:-bottom-12 sm:-right-8 w-[55%] sm:w-[50%] aspect-[4/3] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border-4 border-white z-10"
-            >
-              <img src={ABOUT_IMAGES.classroom} alt="Classroom at New Ridge School" className="h-full w-full object-cover object-center" loading="lazy" decoding="async" />
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: -30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="absolute -top-6 -left-4 sm:-top-10 sm:-left-10 w-[55%] sm:w-[45%] aspect-[16/10] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border-4 border-white z-10 bg-slate-50"
-            >
-              <img src={ABOUT_IMAGES.community} alt="Student community at New Ridge School" className="h-full w-full object-contain bg-slate-50" loading="lazy" decoding="async" />
-            </motion.div>
+            {/* Secondary Card: Classroom */}
+            <div className="relative aspect-[16/10] sm:aspect-[2/1] lg:aspect-[16/11] rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md border border-slate-200 group transition-shadow duration-300">
+              <img src={ABOUT_IMAGES.classroom} alt="Classroom at New Ridge School" className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+            </div>
           </motion.div>
 
           {/* Right: Content */}
@@ -89,7 +80,7 @@ export function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="mt-12 lg:mt-0"
+            className="mt-8 lg:mt-0"
           >
             <motion.div variants={itemVariants}>
               <span className="inline-flex items-center gap-2 rounded-full bg-blue-50/80 border border-blue-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary">
