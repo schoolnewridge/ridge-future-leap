@@ -25,7 +25,7 @@ function ContactPage() {
   return (
     <>
       <PageHero eyebrow="Get in Touch" title="Contact New Ridge School" description="Call, message, or visit New Ridge School at Khanapuram Haveli on Yellandu Road, Khammam." />
-      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+      <section className="pt-16 pb-28 sm:py-20 lg:py-24 bg-background">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col gap-10">
             <div className="grid sm:grid-cols-2 gap-6">

@@ -100,7 +100,7 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/8 text-white shadow-[0_10px_24px_rgba(0,0,0,0.2)] transition hover:border-yellow-300/40 hover:bg-white/12 hover:text-yellow-300 lg:hidden"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/10 bg-white/8 text-white shadow-[0_10px_24px_rgba(0,0,0,0.2)] transition hover:border-yellow-300/40 hover:bg-white/12 hover:text-yellow-300 lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -139,18 +139,35 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
 
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.25 }}
-            className="lg:hidden border-t border-white/10 bg-[linear-gradient(180deg,rgba(7,17,41,0.98)_0%,rgba(11,16,32,0.98)_50%,rgba(30,27,22,0.98)_100%)] backdrop-blur-2xl"
-          >
-            <div className="mx-auto max-h-[calc(100vh-140px)] overflow-y-auto max-w-7xl px-4 py-5 sm:px-6">
-              <div className="mb-4 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-[60] bg-slate-950/60 backdrop-blur-sm lg:hidden"
+              onClick={() => setOpen(false)}
+            />
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed inset-y-0 right-0 z-[70] flex w-full max-w-sm flex-col bg-header-gradient border-l border-white/10 px-6 py-6 shadow-2xl lg:hidden overflow-y-auto"
+            >
+              <div className="flex items-center justify-between mb-8">
+                <span className="font-display text-xl font-semibold text-white">Menu</span>
+                <button
+                  onClick={() => setOpen(false)}
+                  className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-white/10 bg-white/8 text-white transition hover:border-yellow-300/40 hover:bg-white/12 hover:text-yellow-300"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <div className="mb-6 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 leading-relaxed">
                 Quick links and admissions access for parents on the move.
               </div>
-              <ul className="space-y-1">
+              <ul className="space-y-2 flex-1">
                 {NAV.map((item) => {
                   const anchor = sectionAnchors[item.label];
                   return (
@@ -174,25 +191,25 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
                     </li>
                   );
                 })}
-                <li className="pt-3">
+                <li className="pt-4">
                   <a
                     href="/#admissions"
                     onClick={() => setOpen(false)}
-                    className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#fef08a_0%,#facc15_50%,#eab308_100%)] px-6 text-sm font-semibold text-slate-900 shadow-[0_16px_34px_rgba(250,204,21,0.34)] transition-all duration-300 hover:-translate-y-0.5"
+                    className="inline-flex min-h-[44px] w-full items-center justify-center gap-2 rounded-full bg-[linear-gradient(135deg,#fef08a_0%,#facc15_50%,#eab308_100%)] px-6 text-sm font-semibold text-slate-900 shadow-[0_16px_34px_rgba(250,204,21,0.34)] transition-all duration-300 hover:-translate-y-0.5"
                   >
                     Apply Now
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </li>
-                <li className="mt-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">
+                <li className="mt-4 flex min-h-[44px] items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80">
                   <Phone className="h-4 w-4 text-yellow-300" />
-                  <a href={`tel:${SITE.phones[0].replace(/\s/g, "")}`} className="transition hover:text-yellow-300">
+                  <a href={`tel:${SITE.phones[0].replace(/\s/g, "")}`} className="transition hover:text-yellow-300 py-1">
                     {SITE.phones[0]}
                   </a>
                 </li>
               </ul>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>

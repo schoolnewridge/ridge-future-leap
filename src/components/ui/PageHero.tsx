@@ -17,14 +17,14 @@ export function PageHero({ eyebrow, title, description, children }: { eyebrow?: 
         )}
         <motion.h1
           initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.08 }}
-          className="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-900"
+          className="mt-5 font-display text-responsive-h1 font-semibold tracking-tight text-slate-900"
         >
           {title}
         </motion.h1>
         {description && (
           <motion.p
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.14 }}
-            className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed"
+            className="mt-5 text-responsive-p text-slate-600 max-w-2xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>

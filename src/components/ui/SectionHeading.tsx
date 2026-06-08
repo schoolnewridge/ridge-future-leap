@@ -32,7 +32,7 @@ export function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.05 }}
-        className={`mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight ${
+        className={`mt-4 font-display text-responsive-h2 font-semibold tracking-tight ${
           light ? "text-white" : "text-slate-900"
         }`}
       >
@@ -44,7 +44,7 @@ export function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className={`mt-4 text-base sm:text-lg leading-relaxed ${
+          className={`mt-4 text-responsive-p leading-relaxed ${
             light ? "text-white/70" : "text-slate-600"
           }`}
         >
