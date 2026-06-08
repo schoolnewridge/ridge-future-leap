@@ -22,6 +22,7 @@ import culturalDance2 from "../../WhatsApp Image 2026-05-27 at 18.35.41.jpeg";
 import culturalDance3 from "../../WhatsApp Image 2026-05-27 at 18.38.42.jpeg";
 
 export const BRANDING_IMAGE = logoNewRidge;
+export const META_IMAGE = campusBuilding;
 
 export const HERO_SLIDES = [
   {

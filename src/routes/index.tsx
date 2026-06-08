@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { WhyChoose } from "@/components/sections/WhyChoose";
-import { Leadership } from "@/components/sections/Leadership";
+
 import { Gallery } from "@/components/sections/Gallery";
 import { AdmissionsCTA } from "@/components/sections/AdmissionsCTA";
 import { AdmissionsForm } from "@/components/sections/AdmissionsForm";
-import { HERO_SLIDES } from "@/lib/images";
+import { META_IMAGE } from "@/lib/images";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -16,8 +16,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "New Ridge School Khammam — The Right Path to Success" },
       { property: "og:description", content: "CBSE and State integrated school in Khammam · Nursery to Class X." },
       { property: "og:url", content: "/" },
-      { property: "og:image", content: HERO_SLIDES[0].src },
-      { name: "twitter:image", content: HERO_SLIDES[0].src },
+      { property: "og:image", content: META_IMAGE },
+      { name: "twitter:image", content: META_IMAGE },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
@@ -30,7 +30,7 @@ function Index() {
       <Hero />
       <About />
       <WhyChoose />
-      <Leadership />
+
       <Gallery />
       <AdmissionsCTA />
       <div id="admissions" className="scroll-mt-24">
