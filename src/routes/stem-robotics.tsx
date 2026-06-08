@@ -62,7 +62,7 @@ function StemHero() {
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               className="relative rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(15,23,42,0.1)] border border-white/40 bg-white"
             >
-              <img src={roboImage} alt="STEM and Robotics at New Ridge School" className="w-full h-auto object-cover aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] hover:scale-105 transition-transform duration-700 ease-out" />
+              <img src={roboImage} alt="STEM and Robotics at New Ridge School" className="w-full h-auto object-cover aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] hover:scale-105 transition-transform duration-700 ease-out" style={{ objectPosition: "center 20%" }} />
               
               <div className="absolute top-5 right-5 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-full shadow-lg border border-white flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
