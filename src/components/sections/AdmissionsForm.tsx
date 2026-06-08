@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -31,9 +32,11 @@ export type AdmissionSubmission = {
   classApplyingFor: string;
   previousSchoolStudied: string;
   fatherName: string;
-  fatherOccupation: string;
+  fatherEducationalQualificationAndProfession: string;
   motherName: string;
-  motherOccupation: string;
+  motherEducationalQualificationAndProfession: string;
+  busFacility: "Yes" | "No";
+  declarationAccepted: boolean;
   mobileNumber: string;
   parentEmailId: string;
   doorNoStreet: string;
@@ -53,9 +56,11 @@ const admissionSchema = z.object({
   classApplyingFor: z.string().min(1, "Class applying for is required"),
   previousSchoolStudied: z.string().trim().min(2, "Previous school studied is required"),
   fatherName: z.string().trim().min(2, "Father name is required"),
-  fatherOccupation: z.string().trim().min(2, "Father occupation is required"),
+  fatherEducationalQualificationAndProfession: z.string().trim().min(2, "Father educational qualification and profession is required"),
   motherName: z.string().trim().min(2, "Mother name is required"),
-  motherOccupation: z.string().trim().min(2, "Mother occupation is required"),
+  motherEducationalQualificationAndProfession: z.string().trim().min(2, "Mother educational qualification and profession is required"),
+  busFacility: z.enum(["Yes", "No"], { message: "Select bus facility requirement" }),
+  declarationAccepted: z.literal(true, { errorMap: () => ({ message: "You must accept the declaration to proceed." }) }),
   mobileNumber: z.string().regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit mobile number"),
   parentEmailId: z.string().email("Enter a valid email address"),
   doorNoStreet: z.string().trim().min(2, "Door no / Street is required"),
@@ -96,9 +101,11 @@ const defaultValues: AdmissionFormValues = {
   classApplyingFor: "",
   previousSchoolStudied: "",
   fatherName: "",
-  fatherOccupation: "",
+  fatherEducationalQualificationAndProfession: "",
   motherName: "",
-  motherOccupation: "",
+  motherEducationalQualificationAndProfession: "",
+  busFacility: undefined as unknown as "Yes" | "No",
+  declarationAccepted: false as unknown as true,
   mobileNumber: "",
   parentEmailId: "",
   doorNoStreet: "",
@@ -179,7 +186,7 @@ export function AdmissionsForm() {
     defaultValues,
   });
 
-  const occupationPlaceholder = useMemo(() => "Enter occupation", []);
+  const occupationPlaceholder = useMemo(() => "Enter educational qualification and profession", []);
 
   const onSubmit = async (values: AdmissionFormValues) => {
     try {
@@ -320,6 +327,16 @@ export function AdmissionsForm() {
                       </SelectField>
                     )}
                   />
+                  <Controller
+                    control={control}
+                    name="busFacility"
+                    render={({ field }) => (
+                      <SelectField label="Bus Facility *" placeholder="Select option" error={errors.busFacility?.message} value={field.value ?? ""} onValueChange={field.onChange}>
+                        <SelectItem value="Yes">Yes</SelectItem>
+                        <SelectItem value="No">No</SelectItem>
+                      </SelectField>
+                    )}
+                  />
                   <div className="md:col-span-2">
                     <TextField label="Previous School Studied *" placeholder="Enter previous school name or N/A" error={errors.previousSchoolStudied?.message} {...register("previousSchoolStudied")} />
                   </div>
@@ -330,9 +347,9 @@ export function AdmissionsForm() {
                 <SectionTitle eyebrow="Family Details" title="Parent information" description="Enter parent details for contact and verification." />
                 <div className="grid gap-4 md:grid-cols-2">
                   <TextField label="Father Name *" placeholder="Enter father name" error={errors.fatherName?.message} {...register("fatherName")} />
-                  <TextField label="Father Occupation *" placeholder={occupationPlaceholder} error={errors.fatherOccupation?.message} {...register("fatherOccupation")} />
+                  <TextField label="Father Educational Qualification & Profession *" placeholder={occupationPlaceholder} error={errors.fatherEducationalQualificationAndProfession?.message} {...register("fatherEducationalQualificationAndProfession")} />
                   <TextField label="Mother Name *" placeholder="Enter mother name" error={errors.motherName?.message} {...register("motherName")} />
-                  <TextField label="Mother Occupation *" placeholder={occupationPlaceholder} error={errors.motherOccupation?.message} {...register("motherOccupation")} />
+                  <TextField label="Mother Educational Qualification & Profession *" placeholder={occupationPlaceholder} error={errors.motherEducationalQualificationAndProfession?.message} {...register("motherEducationalQualificationAndProfession")} />
                 </div>
               </div>
 
@@ -352,6 +369,33 @@ export function AdmissionsForm() {
                 </div>
               </div>
 
+            </div>
+
+            <div className="space-y-4 rounded-3xl border border-slate-200/80 bg-slate-50/60 p-5 sm:p-6">
+              <SectionTitle eyebrow="Confirmation" title="Declaration" />
+              <p className="text-sm text-slate-600 leading-relaxed">
+                "I hereby declare that all information provided in this admission form is true and correct to the best of my knowledge. I understand that any false information may result in cancellation of admission."
+              </p>
+              <Controller
+                control={control}
+                name="declarationAccepted"
+                render={({ field }) => (
+                  <div className="flex items-start space-x-3 mt-4">
+                    <Checkbox
+                      id="declaration"
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                      className="mt-1"
+                    />
+                    <div className="space-y-1 leading-none">
+                      <Label htmlFor="declaration" className="text-sm font-medium leading-relaxed text-slate-700 cursor-pointer">
+                        I agree to the declaration above and confirm that the submitted information is accurate.
+                      </Label>
+                      {fieldError(errors.declarationAccepted?.message)}
+                    </div>
+                  </div>
+                )}
+              />
             </div>
 
             <div className="flex flex-col-reverse gap-3 border-t border-slate-200/80 pt-6 sm:flex-row sm:items-center sm:justify-between">
