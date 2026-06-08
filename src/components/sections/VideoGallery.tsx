@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Camera } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ABOUT_IMAGES, LEADERSHIP_IMAGES } from "@/lib/images";
+import { ABOUT_IMAGES } from "@/lib/images";
 
 const HIGHLIGHTS = [
   { src: ABOUT_IMAGES.campus, title: "Campus Life" },
   { src: ABOUT_IMAGES.classroom, title: "Digital Class Rooms" },
-  { src: LEADERSHIP_IMAGES.director, title: "Colours Day" },
+  { src: ABOUT_IMAGES.community, title: "Colours Day" },
 ];
 
 export function VideoGallery() {

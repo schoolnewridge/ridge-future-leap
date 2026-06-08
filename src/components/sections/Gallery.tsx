@@ -15,7 +15,7 @@ export function Gallery() {
         <SectionHeading
           eyebrow="Campus Life"
           title="Campus spaces and activities"
-          description="A look at the school’s classrooms, leadership, celebrations and student activities."
+          description="A look at the school’s classrooms, celebrations and student activities."
         />
 
         <div className="mt-10 space-y-10">
@@ -32,7 +32,7 @@ export function Gallery() {
                 <h3 className="font-display text-xl sm:text-2xl font-semibold text-slate-900">{category.name}</h3>
                 <p className="text-sm text-slate-600 max-w-2xl">{category.description}</p>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[190px]">
+              <div className={`grid gap-3 sm:grid-cols-2 ${category.items.length === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} auto-rows-[190px]`}>
                 {category.items.map((item) => (
                   <motion.button
                     key={`${category.name}-${item.caption}`}

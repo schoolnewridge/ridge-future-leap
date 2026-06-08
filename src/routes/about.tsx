@@ -6,9 +6,9 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — New Ridge School Khammam" },
-      { name: "description", content: "Our story, vision and mission. Meet the leadership shaping New Ridge School Khammam." },
+      { name: "description", content: "Our story, vision and mission at New Ridge School Khammam." },
       { property: "og:title", content: "About — New Ridge School Khammam" },
-      { property: "og:description", content: "Our story, vision and mission. Meet the leadership shaping New Ridge School." },
+      { property: "og:description", content: "Our story, vision and mission at New Ridge School Khammam." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
