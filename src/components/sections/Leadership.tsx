@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { LEADERSHIP_IMAGES } from "@/lib/images";
-import { useSanityData } from "@/sanity/hooks";
-import { leadershipQuery } from "@/sanity/queries";
 
-const FALLBACK_LEADERS = [
+const LEADERS = [
   {
     name: "Kapuri Padmavathi",
     title: "Principal & Correspondent",
@@ -24,18 +22,6 @@ const FALLBACK_LEADERS = [
 ];
 
 export function Leadership() {
-  const { data: sanityLeaders } = useSanityData<any[]>(leadershipQuery);
-
-  const leadersToDisplay = sanityLeaders && sanityLeaders.length > 0 
-    ? sanityLeaders.map((leader) => ({
-        name: leader.name,
-        title: leader.designation,
-        image: leader.imageUrl || LEADERSHIP_IMAGES.director,
-        focalPoint: "center 20%",
-        message: leader.message,
-      }))
-    : FALLBACK_LEADERS;
-
   return (
     <section id="leadership" className="py-16 sm:py-24 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -46,7 +32,7 @@ export function Leadership() {
         />
         
         <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-12">
-          {leadersToDisplay.map((leader, index) => (
+          {LEADERS.map((leader, index) => (
             <motion.div
               key={leader.name}
               initial={{ opacity: 0, y: 20 }}

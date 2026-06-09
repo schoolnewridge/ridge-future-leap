@@ -2,16 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { SITE, NAV } from "@/lib/site";
 import { BRANDING_IMAGE } from "@/lib/images";
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react";
-import { useSanityData } from "@/sanity/hooks";
-import { contactQuery } from "@/sanity/queries";
 
 export function Footer() {
-  const { data: sanityContact } = useSanityData<any>(contactQuery);
-
-  const address = sanityContact?.address || `${SITE.address.line1}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.postal}`;
-  const phones = sanityContact ? [sanityContact.phone1, sanityContact.phone2].filter(Boolean) : SITE.phones;
-  const email = sanityContact?.email || SITE.email;
-
   return (
     <footer className="relative bg-[linear-gradient(135deg,#1e3a8a_0%,#0f172a_100%)] text-white overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(250,204,21,0.18),transparent_42%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.18),transparent_38%)]" />
@@ -44,11 +36,11 @@ export function Footer() {
           <div className="lg:col-span-3">
             <h4 className="text-sm font-semibold text-gold uppercase tracking-wider">Contact</h4>
             <ul className="mt-4 space-y-3 text-sm text-white/80">
-              <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-gold shrink-0" /><span>{address}</span></li>
-              {phones.map((p) => (
+              <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-gold shrink-0" /><span>{SITE.address.line1}, {SITE.address.city}, {SITE.address.state} {SITE.address.postal}</span></li>
+              {SITE.phones.map((p) => (
                 <li key={p} className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-gold shrink-0" /><a href={`tel:${p.replace(/\s/g, "")}`} className="hover:text-gold">{p}</a></li>
               ))}
-              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-gold shrink-0" /><a href={`mailto:${email}`} className="hover:text-gold">{email}</a></li>
+              <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-gold shrink-0" /><a href={`mailto:${SITE.email}`} className="hover:text-gold">{SITE.email}</a></li>
             </ul>
             
             <div className="mt-8">
@@ -69,7 +61,7 @@ export function Footer() {
                 <div>
                   <div className="font-semibold text-white">New Ridge School</div>
                   <p className="mt-2 text-sm leading-relaxed text-white/75">
-                    {address}
+                    {SITE.address.line1}, {SITE.address.city}, {SITE.address.state} {SITE.address.postal}
                   </p>
                   <a
                     href={SITE.mapsUrl}
