@@ -28,6 +28,14 @@ import annualEnhanced2 from "../../enhance-an-2.png";
 import annualEnhanced3 from "../../enhanced-an-3.png";
 import annualEnhanced4 from "../../enhanced-an-4.png";
 import greenCampus from "../../enhanced-ground-2.png";
+import directorImage from "../../director_newridge.jpeg";
+import principalImage from "../../WhatsApp Image 2026-05-25 at 18.17.07.jpeg";
+
+export const LEADERSHIP_IMAGES = {
+  director: directorImage,
+  principal: principalImage,
+} as const;
+
 
 export const BRANDING_IMAGE = logoNewRidge;
 export const META_IMAGE = campusBuilding;
