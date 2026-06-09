@@ -46,11 +46,12 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
     "group flex items-center justify-between rounded-2xl border border-yellow-300/20 px-4 py-4 text-base font-medium text-yellow-300 bg-white/6 shadow-[0_0_18px_rgba(250,204,21,0.12)]";
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full border-b border-white/10 bg-header-gradient text-white shadow-header transition-all duration-500 ${
-        scrolled ? "backdrop-blur-[22px]" : "backdrop-blur-[14px]"
-      }`}
-    >
+    <>
+      <header
+        className={`sticky top-0 z-50 w-full border-b border-white/10 bg-header-gradient text-white shadow-header transition-all duration-500 ${
+          scrolled ? "backdrop-blur-[22px]" : "backdrop-blur-[14px]"
+        }`}
+      >
       <div className="border-b border-white/10 bg-[linear-gradient(90deg,rgba(7,17,41,0.95)_0%,rgba(11,16,32,0.92)_40%,rgba(30,27,22,0.92)_100%)] shadow-[inset_0_-1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl">
         <div className={`mx-auto flex ${topRowClass} max-w-7xl items-center justify-between gap-4 px-4 transition-all duration-500 sm:px-6 lg:px-8`}>
           <Link to="/" className="group flex items-center gap-3 shrink-0">
@@ -137,6 +138,8 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
         </div>
       </div>
 
+      </header>
+
       <AnimatePresence>
         {open && (
           <>
@@ -212,6 +215,6 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
           </>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
