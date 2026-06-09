@@ -12,34 +12,58 @@ export function Gallery() {
   const [open, setOpen] = useState<OpenImage>(null);
   const { data: sanityGallery } = useSanityData<any[]>(galleryQuery);
 
-  const hasSanityData = sanityGallery && sanityGallery.length > 0;
-
-  let categoriesToDisplay: any[] = [];
-
-  if (hasSanityData) {
-    // Dynamically group gallery items by their Sanity category
-    const grouped = sanityGallery.reduce((acc: any, item: any) => {
-      const catName = item.category || "Uncategorized";
-      if (!acc[catName]) {
-        acc[catName] = {
-          name: catName,
-          description: "", // Fallback description for dynamic categories
-          items: []
-        };
-      }
-      acc[catName].items.push({
-        src: item.imageUrl,
-        alt: item.title || catName,
-        caption: item.title,
-        focalPoint: "center center" // Default focal point
-      });
-      return acc;
-    }, {});
+  // 1. Process existing hardcoded categories and merge Sanity images into them
+  const categoriesToDisplay = FALLBACK_CATEGORIES.map(category => {
+    const sanityItemsRaw = sanityGallery?.filter(item => item.category === category.name) || [];
     
-    categoriesToDisplay = Object.values(grouped);
-  } else {
-    // Fallback strictly to hardcoded data if Sanity is empty
-    categoriesToDisplay = FALLBACK_CATEGORIES;
+    const sanityItems = sanityItemsRaw.map(item => ({
+      src: item.imageUrl,
+      alt: item.title || item.category,
+      caption: item.title,
+      focalPoint: "center center"
+    }));
+
+    const mergedItems = [...category.items, ...sanityItems];
+
+    if (sanityGallery) {
+      console.log(`[Category: ${category.name}] Hardcoded: ${category.items.length} | Sanity: ${sanityItems.length} | Merged: ${mergedItems.length}`);
+    }
+
+    return {
+      ...category,
+      items: mergedItems
+    };
+  });
+
+  // 2. Identify entirely new categories published in Sanity that don't exist in hardcoded lists
+  if (sanityGallery) {
+    const fallbackCategoryNames = new Set(FALLBACK_CATEGORIES.map(c => c.name));
+    const newSanityItems = sanityGallery.filter(item => !fallbackCategoryNames.has(item.category));
+    
+    if (newSanityItems.length > 0) {
+      const groupedNew = newSanityItems.reduce((acc: any, item: any) => {
+        const catName = item.category || "Uncategorized";
+        if (!acc[catName]) {
+          acc[catName] = {
+            name: catName,
+            description: "", 
+            items: []
+          };
+        }
+        acc[catName].items.push({
+          src: item.imageUrl,
+          alt: item.title || catName,
+          caption: item.title,
+          focalPoint: "center center"
+        });
+        return acc;
+      }, {});
+
+      Object.values(groupedNew).forEach((newCat: any) => {
+        console.log(`[Category: ${newCat.name}] Hardcoded: 0 | Sanity: ${newCat.items.length} | Merged: ${newCat.items.length}`);
+        categoriesToDisplay.push(newCat);
+      });
+    }
   }
 
   return (
