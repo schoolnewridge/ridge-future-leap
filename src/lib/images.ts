@@ -18,7 +18,6 @@ import prePrimary1 from "../../WhatsApp Image 2026-05-27 at 18.30.12.jpeg";
 import prePrimary2 from "../../WhatsApp Image 2026-05-27 at 18.31.53.jpeg";
 import prePrimaryPlay from "../../ChatGPT Image Jun 8, 2026, 05_17_39 PM.png";
 import prePrimary3 from "../../WhatsApp Image 2026-05-28 at 16.26.10.jpeg";
-import culturalCelebration from "../../WhatsApp Image 2026-05-27 at 17.15.52.jpeg";
 import festival3 from "../../WhatsApp Image 2026-05-27 at 18.34.18.jpeg";
 import culturalDance2 from "../../nr_4.png";
 import culturalDance3 from "../../WhatsApp Image 2026-05-27 at 18.38.42.jpeg";
@@ -143,7 +142,6 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     name: "Cultural Activities",
     description: "Dance, stage programs, and student participation.",
     items: [
-      { src: culturalCelebration, alt: "Students and teachers taking part in a cultural celebration", caption: "Cultural celebration", focalPoint: "center 16%" },
       { src: culturalDance1, alt: "Students performing in a cultural activity", caption: "Cultural program", focalPoint: "center 18%" },
       { src: culturalDance2, alt: "Students on stage during a cultural event", caption: "School Event" },
       { src: culturalDance3, alt: "Cultural performance at New Ridge School", caption: "Cultural showcase" },
