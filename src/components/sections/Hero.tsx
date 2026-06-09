@@ -84,21 +84,22 @@ export function Hero() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.98, y: -10 }}
               transition={{ duration: 0.6 }}
-              className={`relative overflow-hidden rounded-[2rem] bg-white p-3 sm:p-4 shadow-elegant border aspect-square sm:aspect-[4/3] lg:aspect-auto lg:h-[600px] xl:h-[650px] transition-all duration-700 ${
+              className={`relative flex flex-col gap-4 sm:gap-5 overflow-hidden rounded-[2rem] bg-white p-3 sm:p-4 shadow-elegant border min-h-[500px] sm:aspect-[4/3] lg:aspect-auto lg:h-[600px] xl:h-[650px] transition-all duration-700 ${
                 i === 2 
                   ? "border-blue-300/80 shadow-[0_0_50px_-12px_rgba(29,78,216,0.45)]" 
                   : "border-slate-200"
               }`}
             >
-              <img src={SLIDES[i].src} alt={SLIDES[i].alt} className="h-full w-full object-cover rounded-[1.4rem]" loading={i === 0 ? "eager" : "lazy"} decoding="async" />
-              <div className="absolute inset-4 rounded-[1.4rem] bg-gradient-to-t from-slate-950/65 via-slate-950/18 to-transparent pointer-events-none" />
-              <div className="absolute left-8 bottom-8 right-8 rounded-2xl border border-white/70 bg-white/90 backdrop-blur-xl p-4 shadow-[0_16px_30px_rgba(15,23,42,0.12)]">
-                <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="relative w-full flex-1 overflow-hidden rounded-[1.4rem] min-h-0">
+                <img src={SLIDES[i].src} alt={SLIDES[i].alt} className="h-full w-full object-cover" loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+              </div>
+              <div className="shrink-0 rounded-2xl border border-slate-100 bg-slate-50 p-4 sm:p-5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
                     <div className="text-[10px] uppercase tracking-[0.28em] text-primary font-semibold">New Ridge School</div>
-                    <div className="mt-1 font-display text-2xl font-semibold text-slate-900">{SLIDES[i].cardTitle}</div>
+                    <div className="mt-1 font-display text-xl sm:text-2xl font-semibold text-slate-900">{SLIDES[i].cardTitle}</div>
                   </div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-primary border border-blue-100">
+                  <div className="self-start sm:self-auto inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-primary border border-blue-100">
                     {SLIDES[i].cardTag}
                   </div>
                 </div>
