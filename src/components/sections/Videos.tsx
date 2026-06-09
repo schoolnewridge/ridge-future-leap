@@ -2,15 +2,7 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Youtube } from "lucide-react";
 
-// Latest videos from the New Ridge School Khammam YouTube channel
-const VIDEOS = {
-  featured: "Y6_UxsReLsQ",
-  grid: [
-    "8oYApWjuG_A",
-    "mFHxtkEHaAU",
-    "Y8mwt9_Lpsk",
-  ]
-};
+const VIDEO_ID = "Y6_UxsReLsQ";
 
 export function Videos() {
   return (
@@ -22,8 +14,7 @@ export function Videos() {
           description="Explore our classrooms, STEM learning, cultural programs, annual day celebrations, sports activities, and student achievements through video highlights from New Ridge School."
         />
 
-        <div className="mt-14 flex flex-col gap-6 lg:gap-8">
-          {/* Featured Large Video */}
+        <div className="mt-14 mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -31,10 +22,10 @@ export function Videos() {
             transition={{ duration: 0.5 }}
             className="w-full overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-all hover:shadow-elegant group"
           >
-            <div className="relative w-full pb-[56.25%]"> {/* 16:9 Aspect Ratio */}
+            <div className="relative w-full pb-[56.25%]">
               <iframe
                 className="absolute top-0 left-0 h-full w-full border-0"
-                src={`https://www.youtube.com/embed/${VIDEOS.featured}`}
+                src={`https://www.youtube.com/embed/${VIDEO_ID}`}
                 title="New Ridge School Featured Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -43,39 +34,13 @@ export function Videos() {
               ></iframe>
             </div>
           </motion.div>
-
-          {/* Grid Videos */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            {VIDEOS.grid.map((videoId, index) => (
-              <motion.div
-                key={`${videoId}-${index}`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="w-full overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-all hover:shadow-elegant group"
-              >
-                <div className="relative w-full pb-[56.25%]"> {/* 16:9 Aspect Ratio */}
-                  <iframe
-                    className="absolute top-0 left-0 h-full w-full border-0"
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    title={`New Ridge School Video Highlight ${index + 1}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-12 flex justify-center"
         >
           <a
