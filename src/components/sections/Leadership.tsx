@@ -4,7 +4,7 @@ import { LEADERSHIP_IMAGES } from "@/lib/images";
 
 const LEADERS = [
   {
-    name: "K. Padma",
+    name: "Kapuri Padmavathi",
     title: "Principal & Correspondent",
     image: LEADERSHIP_IMAGES.principal,
     focalPoint: "center 20%",
@@ -12,7 +12,7 @@ const LEADERS = [
       "Our focus is on holistic learning and student growth. We believe in creating a nurturing and dynamic educational environment that encourages curiosity, critical thinking, and a lifelong love for learning. Together with our dedicated educators, we strive to shape confident and responsible global citizens.",
   },
   {
-    name: "K. Rajasekhar",
+    name: "Kapuri Rajasekhar",
     title: "Director",
     image: LEADERSHIP_IMAGES.director,
     focalPoint: "center 15%",
