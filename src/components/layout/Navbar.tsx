@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Facebook, Mail, Menu, Phone, X, ArrowRight } from "lucide-react";
+import { Facebook, Instagram, Youtube, Mail, Menu, Phone, X, ArrowRight } from "lucide-react";
 import { NAV, SITE } from "@/lib/site";
 import { BRANDING_IMAGE } from "@/lib/images";
 import { motion, AnimatePresence } from "framer-motion";
@@ -92,8 +92,10 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
               <Phone className="h-4 w-4 text-yellow-300" />
               <span>{SITE.phones[0]}</span>
             </a>
-            <div className="flex items-center gap-2 text-white/70">
-              <a href={SITE.socials.facebook} aria-label="Facebook" className="transition-colors hover:text-yellow-300"><Facebook className="h-4 w-4" /></a>
+            <div className="flex items-center gap-3 text-white/70">
+              <a href={SITE.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="transition-all hover:text-yellow-300 hover:scale-110 inline-block"><Facebook className="h-4 w-4" /></a>
+              <a href={SITE.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="transition-all hover:text-yellow-300 hover:scale-110 inline-block"><Instagram className="h-4 w-4" /></a>
+              <a href={SITE.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className="transition-all hover:text-yellow-300 hover:scale-110 inline-block"><Youtube className="h-4 w-4" /></a>
             </div>
           </div>
 
@@ -209,6 +211,11 @@ export function Navbar({ transparentOnTop = false }: { transparentOnTop?: boolea
                   <a href={`tel:${SITE.phones[0].replace(/\s/g, "")}`} className="transition hover:text-yellow-300 py-1">
                     {SITE.phones[0]}
                   </a>
+                </li>
+                <li className="mt-2 flex items-center justify-center gap-6 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white/80">
+                  <a href={SITE.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="transition-all hover:scale-110 hover:text-yellow-300 inline-block"><Facebook className="h-5 w-5" /></a>
+                  <a href={SITE.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="transition-all hover:scale-110 hover:text-yellow-300 inline-block"><Instagram className="h-5 w-5" /></a>
+                  <a href={SITE.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className="transition-all hover:scale-110 hover:text-yellow-300 inline-block"><Youtube className="h-5 w-5" /></a>
                 </li>
               </ul>
             </motion.div>

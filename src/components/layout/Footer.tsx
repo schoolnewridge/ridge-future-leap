@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { SITE, NAV } from "@/lib/site";
 import { BRANDING_IMAGE } from "@/lib/images";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -42,6 +42,15 @@ export function Footer() {
               ))}
               <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-gold shrink-0" /><a href={`mailto:${SITE.email}`} className="hover:text-gold">{SITE.email}</a></li>
             </ul>
+            
+            <div className="mt-8">
+              <h4 className="text-xs font-semibold text-gold/80 uppercase tracking-wider mb-4">Follow Us</h4>
+              <div className="flex items-center gap-3">
+                <a href={SITE.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/80 transition-all hover:scale-110 hover:border-gold hover:text-gold"><Facebook className="h-4 w-4" /></a>
+                <a href={SITE.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/80 transition-all hover:scale-110 hover:border-gold hover:text-gold"><Instagram className="h-4 w-4" /></a>
+                <a href={SITE.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/80 transition-all hover:scale-110 hover:border-gold hover:text-gold"><Youtube className="h-4 w-4" /></a>
+              </div>
+            </div>
           </div>
 
           <div className="lg:col-span-3">

@@ -1,4 +1,4 @@
-import { Phone, Mail, Facebook, Sparkles } from "lucide-react";
+import { Phone, Mail, Facebook, Instagram, Youtube, Sparkles } from "lucide-react";
 import { SITE } from "@/lib/site";
 
 export function TopBar() {
@@ -20,8 +20,10 @@ export function TopBar() {
           <span className="inline-flex items-center gap-1.5 rounded-full border border-yellow-300/20 bg-white/10 px-3 py-1 font-semibold text-yellow-200 shadow-[0_0_18px_rgba(250,204,21,0.18)]">
             <Sparkles className="h-3 w-3" /> Admissions Open 2025-26
           </span>
-          <div className="flex items-center gap-3 text-white/70">
-            <a href={SITE.socials.facebook} aria-label="Facebook" className="transition-colors hover:text-yellow-300"><Facebook className="h-3.5 w-3.5" /></a>
+          <div className="flex items-center gap-3.5 text-white/70">
+            <a href={SITE.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="transition-all hover:text-yellow-300 hover:scale-110 inline-block"><Facebook className="h-3.5 w-3.5" /></a>
+            <a href={SITE.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="transition-all hover:text-yellow-300 hover:scale-110 inline-block"><Instagram className="h-3.5 w-3.5" /></a>
+            <a href={SITE.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className="transition-all hover:text-yellow-300 hover:scale-110 inline-block"><Youtube className="h-3.5 w-3.5" /></a>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/ui/PageHero";
 import { SITE } from "@/lib/site";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { CONTACT_IMAGE } from "@/lib/images";
@@ -63,6 +63,15 @@ function ContactPage() {
               >
                 <FaWhatsapp className="h-5 w-5" /> Chat on WhatsApp
               </a>
+            </div>
+
+            <div className="mt-8 flex flex-col items-center gap-4">
+              <div className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Follow Us</div>
+              <div className="flex items-center gap-4">
+                <a href={SITE.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page" className="flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border shadow-sm text-primary transition-all hover:scale-110 hover:border-gold hover:text-gold hover:shadow-elegant"><Facebook className="h-5 w-5" /></a>
+                <a href={SITE.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page" className="flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border shadow-sm text-primary transition-all hover:scale-110 hover:border-gold hover:text-gold hover:shadow-elegant"><Instagram className="h-5 w-5" /></a>
+                <a href={SITE.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className="flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border shadow-sm text-primary transition-all hover:scale-110 hover:border-gold hover:text-gold hover:shadow-elegant"><Youtube className="h-5 w-5" /></a>
+              </div>
             </div>
           </motion.div>
         </div>

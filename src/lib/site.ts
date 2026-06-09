@@ -20,6 +20,8 @@ export const SITE = {
   email: "newridgeschool@gmail.com",
   socials: {
     facebook: "#",
+    instagram: "https://www.instagram.com/newridgeschool?igsh=MXV0dzNjb2RoaXJkag==",
+    youtube: "https://youtube.com/@newridgeschoolkhammam4249?si=KStTPY93ph3ZJyWI",
   },
   mapsEmbed:
     "https://www.google.com/maps?q=17.2596926,80.1655954&z=17&output=embed",
