@@ -5,6 +5,8 @@ import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { CONTACT_IMAGE } from "@/lib/images";
+import { useSanityData } from "@/sanity/hooks";
+import { contactQuery } from "@/sanity/queries";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -21,6 +23,11 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const { data: sanityContact } = useSanityData<any>(contactQuery);
+
+  const address = sanityContact?.address || `${SITE.address.line1}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.postal}`;
+  const phones = sanityContact ? [sanityContact.phone1, sanityContact.phone2].filter(Boolean) : SITE.phones;
+  const email = sanityContact?.email || SITE.email;
 
   return (
     <>
@@ -30,9 +37,9 @@ function ContactPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col gap-10">
             <div className="grid sm:grid-cols-2 gap-6">
               {[
-                { Icon: MapPin, label: "Visit", value: `${SITE.address.line1}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.postal}` },
-                { Icon: Phone, label: "Call", value: SITE.phones.join(" · ") },
-                { Icon: Mail, label: "Email", value: SITE.email },
+                { Icon: MapPin, label: "Visit", value: address },
+                { Icon: Phone, label: "Call", value: phones.join(" · ") },
+                { Icon: Mail, label: "Email", value: email },
                 { Icon: Clock, label: "Hours", value: "Mon–Sat · 8:30 AM – 4:30 PM" },
               ].map((c) => (
                 <div key={c.label} className="rounded-3xl bg-card border border-border p-8 flex flex-col items-center text-center gap-5 shadow-sm hover:shadow-elegant transition-shadow">

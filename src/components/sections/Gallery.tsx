@@ -2,12 +2,33 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Lightbox } from "@/components/ui/Lightbox";
-import { GALLERY_CATEGORIES } from "@/lib/images";
+import { GALLERY_CATEGORIES as FALLBACK_CATEGORIES } from "@/lib/images";
+import { useSanityData } from "@/sanity/hooks";
+import { galleryQuery } from "@/sanity/queries";
 
 type OpenImage = { src: string; alt: string } | null;
 
 export function Gallery() {
   const [open, setOpen] = useState<OpenImage>(null);
+  const { data: sanityGallery } = useSanityData<any[]>(galleryQuery);
+
+  const categories = FALLBACK_CATEGORIES.map(category => {
+    // If Sanity has data for this category, use it. Otherwise, use fallback.
+    const sanityItems = sanityGallery?.filter(item => item.category === category.name);
+    
+    if (sanityItems && sanityItems.length > 0) {
+      return {
+        ...category,
+        items: sanityItems.map(item => ({
+          src: item.imageUrl,
+          alt: item.title || item.category,
+          caption: item.title,
+        }))
+      };
+    }
+    
+    return category;
+  });
 
   return (
     <section id="gallery" className="scroll-mt-24 py-12 sm:py-14 bg-background">
@@ -19,7 +40,7 @@ export function Gallery() {
         />
 
         <div className="mt-10 space-y-10">
-          {GALLERY_CATEGORIES.map((category, categoryIndex) => (
+          {categories.map((category, categoryIndex) => (
             <motion.section
               key={category.name}
               initial={{ opacity: 0, y: 14 }}
@@ -33,9 +54,9 @@ export function Gallery() {
                 <p className="text-sm text-slate-600 max-w-2xl">{category.description}</p>
               </div>
               <div className={`grid gap-3 sm:grid-cols-2 ${category.items.length === 4 ? 'lg:grid-cols-4' : category.items.length === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} auto-rows-[190px]`}>
-                {category.items.map((item) => (
+                {category.items.map((item, idx) => (
                   <motion.button
-                    key={`${category.name}-${item.caption}`}
+                    key={`${category.name}-${item.caption || idx}`}
                     initial={{ opacity: 0, scale: 0.98 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -47,7 +68,7 @@ export function Gallery() {
                       src={item.src}
                       alt={item.alt}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      style={item.focalPoint ? { objectPosition: item.focalPoint } : undefined}
+                      style={(item as any).focalPoint ? { objectPosition: (item as any).focalPoint } : undefined}
                       loading="lazy"
                       decoding="async"
                     />
