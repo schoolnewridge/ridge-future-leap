@@ -4,6 +4,7 @@ import { About } from "@/components/sections/About";
 import { Leadership } from "@/components/sections/Leadership";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 
+import { Videos } from "@/components/sections/Videos";
 import { Gallery } from "@/components/sections/Gallery";
 import { AdmissionsCTA } from "@/components/sections/AdmissionsCTA";
 import { AdmissionsForm } from "@/components/sections/AdmissionsForm";
@@ -33,6 +34,7 @@ function Index() {
       <Leadership />
       <WhyChoose />
 
+      <Videos />
       <Gallery />
       <AdmissionsCTA />
       <div id="admissions" className="scroll-mt-24">
