@@ -2,14 +2,13 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Youtube } from "lucide-react";
 
-// TODO: Replace these placeholder YouTube video IDs with actual video IDs from your channel.
-// The featured video will appear large at the top on desktop.
+// Latest videos from the New Ridge School Khammam YouTube channel
 const VIDEOS = {
-  featured: "M7lc1UVf-VE",
+  featured: "Y6_UxsReLsQ",
   grid: [
-    "M7lc1UVf-VE",
-    "M7lc1UVf-VE",
-    "M7lc1UVf-VE",
+    "8oYApWjuG_A",
+    "mFHxtkEHaAU",
+    "Y8mwt9_Lpsk",
   ]
 };
 
