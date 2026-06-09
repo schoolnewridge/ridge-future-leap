@@ -17,12 +17,13 @@ export default defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Campus Images', value: 'Campus Images' },
-          { title: 'Pre-Primary', value: 'Pre-Primary' },
+          { title: 'Campus', value: 'Campus' },
+          { title: 'Classrooms', value: 'Classrooms' },
+          { title: 'Festivals', value: 'Festivals' },
           { title: 'Cultural Activities', value: 'Cultural Activities' },
-          { title: 'STEM & Robotics', value: 'STEM & Robotics' },
-          { title: 'Sports', value: 'Sports' },
-          { title: 'Events', value: 'Events' },
+          { title: 'Karate', value: 'Karate' },
+          { title: 'Pre-Primary', value: 'Pre-Primary' },
+          { title: 'Annual Day', value: 'Annual Day' },
         ],
       },
       validation: (rule) => rule.required(),
