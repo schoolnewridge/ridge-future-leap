@@ -4,20 +4,20 @@ import { LEADERSHIP_IMAGES } from "@/lib/images";
 
 const LEADERS = [
   {
+    name: "K. Padma",
+    title: "Principal & Correspondent",
+    image: LEADERSHIP_IMAGES.principal,
+    focalPoint: "center 20%",
+    message:
+      "Our focus is on holistic learning and student growth. We believe in creating a nurturing and dynamic educational environment that encourages curiosity, critical thinking, and a lifelong love for learning. Together with our dedicated educators, we strive to shape confident and responsible global citizens.",
+  },
+  {
     name: "K. Rajasekhar",
     title: "Director",
     image: LEADERSHIP_IMAGES.director,
     focalPoint: "center 15%",
     message:
       "Education is not just about academic excellence; it is about building character, fostering innovation, and preparing students for the challenges of tomorrow. At New Ridge School, our mission is to provide an environment where every child feels valued, inspired, and equipped to achieve their highest potential.",
-  },
-  {
-    name: "K. Padma",
-    title: "Principal",
-    image: LEADERSHIP_IMAGES.principal,
-    focalPoint: "center 20%",
-    message:
-      "Our focus is on holistic learning and student growth. We believe in creating a nurturing and dynamic educational environment that encourages curiosity, critical thinking, and a lifelong love for learning. Together with our dedicated educators, we strive to shape confident and responsible global citizens.",
   },
 ];
 
@@ -45,7 +45,7 @@ export function Leadership() {
                 <div className="relative aspect-[4/5] w-full sm:aspect-auto sm:h-auto sm:w-2/5 shrink-0 overflow-hidden bg-slate-100">
                   <img
                     src={leader.image}
-                    alt={`${leader.name} - ${leader.title}`}
+                    alt={`${leader.name} - ${leader.title}, New Ridge School`}
                     loading="lazy"
                     decoding="async"
                     style={{ objectPosition: leader.focalPoint }}
