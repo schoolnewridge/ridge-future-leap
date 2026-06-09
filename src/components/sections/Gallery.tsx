@@ -12,23 +12,35 @@ export function Gallery() {
   const [open, setOpen] = useState<OpenImage>(null);
   const { data: sanityGallery } = useSanityData<any[]>(galleryQuery);
 
-  const categories = FALLBACK_CATEGORIES.map(category => {
-    // If Sanity has data for this category, use it. Otherwise, use fallback.
-    const sanityItems = sanityGallery?.filter(item => item.category === category.name);
+  const hasSanityData = sanityGallery && sanityGallery.length > 0;
+
+  let categoriesToDisplay: any[] = [];
+
+  if (hasSanityData) {
+    // Dynamically group gallery items by their Sanity category
+    const grouped = sanityGallery.reduce((acc: any, item: any) => {
+      const catName = item.category || "Uncategorized";
+      if (!acc[catName]) {
+        acc[catName] = {
+          name: catName,
+          description: "", // Fallback description for dynamic categories
+          items: []
+        };
+      }
+      acc[catName].items.push({
+        src: item.imageUrl,
+        alt: item.title || catName,
+        caption: item.title,
+        focalPoint: "center center" // Default focal point
+      });
+      return acc;
+    }, {});
     
-    if (sanityItems && sanityItems.length > 0) {
-      return {
-        ...category,
-        items: sanityItems.map(item => ({
-          src: item.imageUrl,
-          alt: item.title || item.category,
-          caption: item.title,
-        }))
-      };
-    }
-    
-    return category;
-  });
+    categoriesToDisplay = Object.values(grouped);
+  } else {
+    // Fallback strictly to hardcoded data if Sanity is empty
+    categoriesToDisplay = FALLBACK_CATEGORIES;
+  }
 
   return (
     <section id="gallery" className="scroll-mt-24 py-12 sm:py-14 bg-background">
@@ -40,7 +52,7 @@ export function Gallery() {
         />
 
         <div className="mt-10 space-y-10">
-          {categories.map((category, categoryIndex) => (
+          {categoriesToDisplay.map((category, categoryIndex) => (
             <motion.section
               key={category.name}
               initial={{ opacity: 0, y: 14 }}
@@ -51,10 +63,12 @@ export function Gallery() {
             >
               <div className="flex flex-col gap-2">
                 <h3 className="font-display text-xl sm:text-2xl font-semibold text-slate-900">{category.name}</h3>
-                <p className="text-sm text-slate-600 max-w-2xl">{category.description}</p>
+                {category.description && (
+                  <p className="text-sm text-slate-600 max-w-2xl">{category.description}</p>
+                )}
               </div>
               <div className={`grid gap-3 sm:grid-cols-2 ${category.items.length === 4 ? 'lg:grid-cols-4' : category.items.length === 2 ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} auto-rows-[190px]`}>
-                {category.items.map((item, idx) => (
+                {category.items.map((item: any, idx: number) => (
                   <motion.button
                     key={`${category.name}-${item.caption || idx}`}
                     initial={{ opacity: 0, scale: 0.98 }}
@@ -68,7 +82,7 @@ export function Gallery() {
                       src={item.src}
                       alt={item.alt}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      style={(item as any).focalPoint ? { objectPosition: (item as any).focalPoint } : undefined}
+                      style={item.focalPoint ? { objectPosition: item.focalPoint } : undefined}
                       loading="lazy"
                       decoding="async"
                     />
