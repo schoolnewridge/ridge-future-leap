@@ -91,7 +91,7 @@ export function Hero() {
               }`}
             >
               <div className="relative w-full flex-1 overflow-hidden rounded-[1.4rem] min-h-0">
-                <img src={SLIDES[i].src} alt={SLIDES[i].alt} className="h-full w-full object-cover" loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+                <img src={SLIDES[i].src} alt={SLIDES[i].alt} className="h-full w-full object-cover" style={{ objectPosition: (SLIDES[i] as any).objectPosition || "center center" }} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
               </div>
               <div className="shrink-0 rounded-2xl border border-slate-100 bg-slate-50 p-4 sm:p-5">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">

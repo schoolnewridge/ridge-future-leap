@@ -72,6 +72,7 @@ export const HERO_SLIDES = [
     desc: "Building innovators, problem solvers, and future technology leaders through hands-on robotics, coding, artificial intelligence, STEM experiments, and innovation-based learning.",
     ctaText: "Explore STEM Programs",
     ctaLink: "/stem-robotics",
+    objectPosition: "center top",
   },
 ] as const;
 
