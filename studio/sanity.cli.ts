@@ -5,6 +5,7 @@ export default defineCliConfig({
     projectId: '6vvcz1yp',
     dataset: 'production'
   },
+  studioHost: 'newridgeschool',
   deployment: {
     /**
      * Enable auto-updates for studios.
