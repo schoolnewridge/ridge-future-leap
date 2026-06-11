@@ -2,7 +2,7 @@ import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'gallery',
-  title: 'Gallery',
+  title: 'Gallery Image',
   type: 'document',
   fields: [
     defineField({
@@ -14,18 +14,8 @@ export default defineType({
     defineField({
       name: 'category',
       title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Campus', value: 'Campus' },
-          { title: 'Classrooms', value: 'Classrooms' },
-          { title: 'Festivals', value: 'Festivals' },
-          { title: 'Cultural Activities', value: 'Cultural Activities' },
-          { title: 'Karate', value: 'Karate' },
-          { title: 'Pre-Primary', value: 'Pre-Primary' },
-          { title: 'Annual Day', value: 'Annual Day' },
-        ],
-      },
+      type: 'reference',
+      to: [{ type: 'galleryCategory' }],
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -34,6 +24,12 @@ export default defineType({
       type: 'image',
       options: { hotspot: true },
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Optional: Use this to manually order images within a category. Lower numbers appear first.',
     }),
   ],
 })
