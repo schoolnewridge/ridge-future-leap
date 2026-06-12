@@ -85,7 +85,7 @@ export function Footer() {
         {/* Agency Branding */}
         <div className="mt-6 pt-6 border-t border-white/10 flex flex-col items-center justify-center text-center">
           <div className="text-[14px] md:text-[15px] text-[#BFC5D2]/90 leading-relaxed">
-            Website Designed & Developed by <span className="font-semibold transition-colors duration-300 hover:text-gold cursor-default">Uniscale Digital</span>
+            Website Designed & Developed by <a href="https://uniscale-flame.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-semibold transition-colors duration-300 hover:text-gold">Uniscale Digital</a>
             <br />
             <a href="mailto:uniscaledigital@gmail.com" className="text-[13px] md:text-[14px] text-[#BFC5D2]/70 transition-colors duration-300 hover:text-white inline-block">
               uniscaledigital@gmail.com
